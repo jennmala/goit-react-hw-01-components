@@ -3,11 +3,13 @@ import styled from '@emotion/styled';
 export const Wrap = styled.section`
   width: 400px;
   margin: 0 auto;
+  margin-bottom: 30px;
   border-radius: 5px;
   overflow: hidden;
 `;
 
 export const Title = styled.h2`
+  margin: 0;
   padding-top: 30px;
   padding-bottom: 30px;
   background-color: #ffffff;
@@ -26,11 +28,12 @@ export const StatList = styled.ul`
 `;
 
 export const Stat = styled.li`
-  flex-basis: calc(100% / 4);
-  padding-top: 25px;
-  padding-bottom: 25px;
-  background-color: #f3f3f3;
-  color: #999999;
+  flex-basis: ${props => `calc(100% / ${props.numberOfStats})`};
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: ${() =>
+    `#${Math.floor(Math.random() * 16777215).toString(16)}`};
+  color: #ffffff;
 `;
 
 export const Label = styled.span`

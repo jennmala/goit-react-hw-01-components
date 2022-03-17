@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 export const ProfileWrap = styled.div`
   width: 400px;
   margin: 0 auto;
+  margin-bottom: 30px;
   border-radius: 5px;
   overflow: hidden;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),

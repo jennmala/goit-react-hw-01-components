@@ -14,53 +14,12 @@ export const Statistics = ({ title, stats }) => {
       {title && <Title>{title}</Title>}
 
       <StatList>
-        <Stat>
-          <Label>.docx</Label>
-          <Percentage>
-            {stats
-              .filter(stat => stat.label === '.docx')
-              .reduce((total, stat) => {
-                return total + stat.percentage;
-              }, 0)}
-            %
-          </Percentage>
-        </Stat>
-
-        <Stat>
-          <Label>.pdf</Label>
-          <Percentage>
-            {stats
-              .filter(stat => stat.label === '.pdf')
-              .reduce((total, stat) => {
-                return total + stat.percentage;
-              }, 0)}
-            %
-          </Percentage>
-        </Stat>
-
-        <Stat>
-          <Label>.mp3</Label>
-          <Percentage>
-            {stats
-              .filter(stat => stat.label === '.mp3')
-              .reduce((total, stat) => {
-                return total + stat.percentage;
-              }, 0)}
-            %
-          </Percentage>
-        </Stat>
-
-        <Stat>
-          <Label>.psd</Label>
-          <Percentage>
-            {stats
-              .filter(stat => stat.label === '.psd')
-              .reduce((total, stat) => {
-                return total + stat.percentage;
-              }, 0)}
-            %
-          </Percentage>
-        </Stat>
+        {stats.map(stat => (
+          <Stat key={stat.id} numberOfStats={stats.length}>
+            <Label>{stat.label}</Label>
+            <Percentage>{stat.percentage}%</Percentage>
+          </Stat>
+        ))}
       </StatList>
     </Wrap>
   );
@@ -77,9 +36,15 @@ Statistics.propTypes = {
   ),
 };
 
-// {stats.map(stat => (
-//     <Stat key={stat.id} numberOfStats={stats.length}>
-//         <Label>{stat.label}</Label>
-//         <Percentage>{stat.percentage}%</Percentage>
-//     </Stat>
-// ))}
+// _______________________________________________
+// <Stat>
+//   <Label>.docx</Label>
+//   <Percentage>
+//     {stats
+//       .filter(stat => stat.label === '.docx')
+//       .reduce((total, stat) => {
+//         return total + stat.percentage;
+//       }, 0)}
+//     %
+//   </Percentage>
+// </Stat>

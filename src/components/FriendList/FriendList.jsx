@@ -1,0 +1,17 @@
+import { FriendListWrap } from './FriendList.styled';
+import { FriendListItem } from 'components/FriendListItem/FriendListItem';
+
+export const FriendList = ({ friends }) => {
+  return (
+    <FriendListWrap>
+      {friends.map(friend => (
+        <FriendListItem
+          key={friend.id}
+          avatar={friend.avatar}
+          name={friend.name}
+          isOnline={friend.isOnline}
+        />
+      ))}
+    </FriendListWrap>
+  );
+};
